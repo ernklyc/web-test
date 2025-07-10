@@ -3,52 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anasayfa</title>
+    <title>Elementra - Fast Food</title>
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>    <div class="homepage">
-        <div class="navbar">
+<body>
+    <div class="homepage">
+        <!-- Navbar -->
+        <nav class="navbar" id="navbar">
             <div class="container">
                 <div class="row">
                     <div class="logo">
                         <img src="../assets/logo-white-retina.png" alt="Elementra">
                     </div>
-                    <div class="menu">
-                        <a href="#">Home</a>
-                        <a href="#">About Us</a>
-                        <a href="#">Our Menu</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Book Now</a>
+                    <div class="menu-social-container">
+                        <div class="menu">
+                            <a href="#">Home</a>
+                            <a href="#">About Us</a>
+                            <a href="#">Our Menu</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Book Now</a>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" class="social-link">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="social-icons">
-                        <a href="#" class="social-link">
-                            <i class="bi bi-twitter-x"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="bi bi-instagram"></i>
-                        </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <!-- Fast Food Text with Animation -->
+                <div class="fast-food-text">
+                    <div class="text-line">
+                        <span class="letter" data-delay="0">F</span>
+                        <span class="letter" data-delay="100">A</span>
+                        <span class="letter" data-delay="200">S</span>
+                        <span class="letter" data-delay="300">T</span>
                     </div>
+                    <div class="text-line">
+                        <span class="letter" data-delay="400">F</span>
+                        <span class="letter" data-delay="500">O</span>
+                        <span class="letter" data-delay="600">O</span>
+                        <span class="letter" data-delay="700">D</span>
+                    </div>
+                </div>
+
+                <!-- Hamburger Image -->
+                <div class="hamburger-container">
+                    <img src="../assets/home_hamburger.jpg" alt="Delicious Burger" class="hamburger-img">
+                    
+                    <!-- Animated Eyes -->
+                    <div class="eyes-container">
+                        <div class="eye left-eye">
+                            <div class="eyeball"></div>
+                        </div>
+                        <div class="eye right-eye">
+                            <div class="eyeball"></div>
+                        </div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+
+                <!-- Side Text -->
+                <div class="side-text">
+                    <p>We appreciate your trust greatly.<br>
+                    Our clients choose us and our<br>
+                    products. Dicta sunt explicabo.</p>
+                </div>
+
+                <!-- Bottom Text -->
+                <div class="bottom-text">
+                    <div class="emoji">😊</div>
+                    <span>WHAT DO YOU FEEL LIKE EATING TODAY?</span>
                 </div>
             </div>
         </div>
     </div>
     
+    <!-- Content Section -->
     <div class="content" id="content">
-        <h2>İçerik Bölümü</h2>
-        <p>Buraya sayfa içeriğinizi ekleyebilirsiniz.</p>
+        <div class="menu-section">
+            <h2>Our Delicious Menu</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <h3>🍔 Burgers</h3>
+                    <p>Gourmet burgers starting at just $8</p>
+                </div>
+                <div class="menu-item">
+                    <h3>🍟 French Fries</h3>
+                    <p>Crispy and golden fries</p>
+                </div>
+                <div class="menu-item">
+                    <h3>🍕 Pizza</h3>
+                    <p>Fresh and delicious pizzas</p>
+                </div>
+                <div class="menu-item">
+                    <h3>🥗 Salads</h3>
+                    <p>Healthy salads from $7</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script>
-        // Sayfa yüklendiğinde otomatik olarak viewport yüksekliği kadar aşağıya kaydır
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                window.scrollTo({
-                    top: window.innerHeight,
-                    behavior: 'smooth'
-                });
-            }, 500); // 500ms bekle, sonra kaydır
-        });
-    </script>
+    <script src="../script/script.js"></script>
 </body>
 </html>
