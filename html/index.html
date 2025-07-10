@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anasayfa</title>
     <link rel="stylesheet" href="../style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body>
-    <div class="homepage">
+<body>    <div class="homepage">
         <div class="navbar">
             <div class="container">
                 <div class="row">
@@ -21,9 +21,34 @@
                         <a href="#">Blog</a>
                         <a href="#">Book Now</a>
                     </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-link">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div class="content" id="content">
+        <h2>İçerik Bölümü</h2>
+        <p>Buraya sayfa içeriğinizi ekleyebilirsiniz.</p>
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde otomatik olarak viewport yüksekliği kadar aşağıya kaydır
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            }, 500); // 500ms bekle, sonra kaydır
+        });
+    </script>
 </body>
 </html>
