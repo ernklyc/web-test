@@ -99,78 +99,91 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-
-    background: url('../assets/home_hamburger.jpg') center center/cover no-repeat;
+    background: linear-gradient(135deg, #c73e1d, #f93a2f);
 }
 
+/* Hero Content - Simple Layout Like Screenshot */
 .hero-content {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
     position: relative;
-    overflow: hidden;
-    z-index: 2;
 }
 
-/* FAST Text */
+/* Text Container */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* First Line Container */
+.first-line {
+    width: 100%;
+    margin-bottom: -50px;
+}
+
+/* Second Line Container */
+.second-line {
+    width: 100%;
+}
+
+/* FAST Text - Big and Simple */
 .fast-text {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 8rem;
-    font-weight: 900;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25rem;
+    font-weight: 400;
     color: #ffd700;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    line-height: 0.8;
     opacity: 0;
-    transform: translateX(-50%) translateY(-50px);
+    
     animation: slideInFast 1s ease 0.5s forwards;
 }
 
-.fast-text span {
-    display: inline-block;
+/* FOOD Text - Big and Simple */
+.food-text {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25rem;
+    font-weight: 400;
+    color: #ffd700;
+    letter-spacing: 0em;
+    line-height: 0.8;
+    position: relative;
+    margin-left: 700px;
+    margin-top: 100px;
 }
 
-@keyframes slideInFast {
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-
-
-/* FOOD and Side Text Container */
-.food-side-container {
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+/* Second Line Animation */
+.second-line {
     opacity: 0;
-    transform: translateX(-50%) translateY(50px);
     animation: slideInFoodContainer 1s ease 1s forwards;
 }
 
-@keyframes slideInFoodContainer {
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
+/* Side Text - Right Side */
+.side-text {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 400px;
+    font-weight: 400;
+    align-self: center;
+    margin-left: 50px;
 }
 
-/* FOOD Text */
-.food-text {
-    position: relative;
-    font-size: 8rem;
-    font-weight: 900;
-    color: #ffd700;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-.food-text span {
-    display: inline-block;
+/* Bottom Question - Positioned at Bottom */
+.bottom-question {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 /* Eye Letters in FOOD */
@@ -188,18 +201,18 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 140px;
-    height: 140px;
+    width: 220px;
+    height: 220px;
     background: white;
     border-radius: 50%;
-    border: 8px solid #333;
+    border: 12px solid #333;
     overflow: hidden;
     z-index: 15;
 }
 
 .eyeball-in-letter {
-    width: 70px;
-    height: 70px;
+    width: 110px;
+    height: 110px;
     background: #333;
     border-radius: 50%;
     position: absolute;
@@ -219,8 +232,8 @@ body {
 /* Pink Cheeks */
 .cheek {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     background: #ff9bb3;
     border-radius: 50%;
     top: 50%;
@@ -228,13 +241,13 @@ body {
 }
 
 .left-cheek {
-    left: -40px;
+    left: -80px;
     top: 60%;
     transform: translateY(-50%);
 }
 
 .right-cheek {
-    right: -40px;
+    right: -80px;
     top: 60%;
     transform: translateY(-50%);
 }
@@ -242,14 +255,14 @@ body {
 /* Smiley Mouth */
 .smiley-mouth {
     position: absolute;
-    bottom: -10px;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 40px;
-    border: 6px solid #333;
+    width: 120px;
+    height: 60px;
+    border: 8px solid #333;
     border-top: none;
-    border-radius: 0 0 80px 80px;
+    border-radius: 0 0 120px 120px;
     background: transparent;
     opacity: 0;
     animation: fadeInMouth 0.8s ease 0.5s forwards;
@@ -261,38 +274,26 @@ body {
     }
 }
 
-/* Side Text */
-.side-text {
-    position: absolute;
-    top: -150px;
-    right: -300px;
-    color: white;
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 280px;
+@keyframes slideInFast {
+    to {
+        opacity: 1;
+    }
 }
 
-.side-text p {
-    margin-bottom: 10px;
+/* FOOD Container Animation */
+.food-side-container {
+    opacity: 0;
+    animation: slideInFoodContainer 1s ease 1s forwards;
 }
 
-/* Bottom Question */
-.bottom-question {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    opacity: 1;
+@keyframes slideInFoodContainer {
+    to {
+        opacity: 1;
+    }
 }
 
 .emoji {
-    font-size: 2rem;
+    font-size: 2.5rem;
     animation: bounce 2s ease-in-out infinite;
 }
 
@@ -312,37 +313,44 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .fast-text {
-        font-size: 4rem;
-        top: 8%;
-        left: 5%;
+    .hero-content {
+        padding: 0 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
     }
     
-    .food-side-container {
-        bottom: 12%;
-        left: 5%;
+    .first-line {
+        margin-bottom: -30px;
+    }
+    
+    .fast-text {
+        font-size: 10rem;
     }
     
     .food-text {
-        font-size: 4rem;
+        font-size: 8rem;
+        margin-left: 300px;
+        margin-top: 30px;
     }
     
     .side-text {
-        right: 5%;
-        max-width: 180px;
-        font-size: 0.85rem;
-        top: -80px;
+        max-width: 100%;
+        font-size: 1.1rem;
+        margin-left: 0;
+        margin-top: 30px;
     }
     
     .bottom-question {
-        bottom: 8%;
-        left: 5%;
-        font-size: 0.9rem;
+        bottom: 40px;
+        left: 30px;
+        font-size: 1.1rem;
     }
     
     .navbar {
         left: 20px;
         right: 20px;
+        padding: 10px 20px;
     }
     
     .menu {
@@ -355,25 +363,33 @@ body {
     }
 
     .eye-in-letter {
+        width: 140px;
+        height: 140px;
+        border: 8px solid #333;
+    }
+
+    .eyeball-in-letter {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cheek {
         width: 60px;
         height: 60px;
     }
 
-    .eyeball-in-letter {
-        width: 30px;
-        height: 30px;
-    }
-
-    .cheek {
-        width: 25px;
-        height: 25px;
-    }
-
     .left-cheek {
-        left: -35px;
+        left: -70px;
     }
 
     .right-cheek {
-        right: -35px;
+        right: -70px;
+    }
+
+    .smiley-mouth {
+        width: 80px;
+        height: 40px;
+        border-width: 5px;
+        border-radius: 0 0 80px 80px;
     }
 }
