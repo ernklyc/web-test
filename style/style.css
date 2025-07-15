@@ -14,11 +14,24 @@ body {
     overflow-x: hidden;
 }
 
+.main-section {
+    height: 160vh;
+    width: 100%;
+    position: relative;
+}
+
+.content-section {
+    min-height: 100vh;
+    width: 100%;
+    background: #fff;
+    padding: 0vh 0;
+}
+
 /* Homepage */
 .homepage {
     width: 100%;
-    height: 100vh;
-    background: transparent;
+    height: 150vh;
+    background: #ca261a;
     position: relative;
     overflow: hidden;
 }
@@ -94,18 +107,18 @@ body {
 
 /* Hero Section */
 .hero-section {
-    height: 100vh;
+    height: 150vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, #c73e1d, #f93a2f);
+    background: linear-gradient(135deg,#ca261a, #f93a2f);
 }
 
 /* Hero Content - Simple Layout Like Screenshot */
 .hero-content {
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,32 +147,78 @@ body {
 /* FAST Text - Big and Simple */
 .fast-text {
     font-family: 'Bebas Neue', cursive;
-    font-size: 25rem;
+    font-size: 26vw;
     font-weight: 400;
-    color: #ffd700;
+    color: #F5A911;
     line-height: 0.8;
-    opacity: 0;
-    
-    animation: slideInFast 1s ease 0.5s forwards;
+    letter-spacing: -0.07em;
+    margin-top: 8vh;
 }
+
+.fast-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.letter-1 { animation: waveInUp 0.8s ease 0.1s forwards; }
+.letter-2 { animation: waveInUp 0.8s ease 0.3s forwards; }
+.letter-3 { animation: waveInUp 0.8s ease 0.5s forwards; }
+.letter-4 { animation: waveInUp 0.8s ease 0.7s forwards; }
 
 /* FOOD Text - Big and Simple */
 .food-text {
     font-family: 'Bebas Neue', cursive;
-    font-size: 25rem;
+    font-size: 26vw;
     font-weight: 400;
-    color: #ffd700;
-    letter-spacing: 0em;
+    color: #F5A911;
+    letter-spacing: -0.07em;
     line-height: 0.8;
     position: relative;
-    margin-left: 700px;
-    margin-top: 100px;
+    margin-left: 35vw;
+    margin-top: 3vh;
 }
+
+.food-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.letter-5 { animation: waveInUp 0.8s ease 0.9s forwards; }
+.letter-6 { animation: waveInUp 0.8s ease 1.1s forwards; }
+.letter-7 { animation: waveInUp 0.8s ease 1.3s forwards; }
+.letter-8 { animation: waveInUp 0.8s ease 1.5s forwards; }
 
 /* Second Line Animation */
 .second-line {
     opacity: 0;
     animation: slideInFoodContainer 1s ease 1s forwards;
+}
+
+/* Food Description Text */
+.food-description {
+    color: white;
+    font-size: 1vw;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 30vw;
+    margin-left: 73vw;
+    margin-bottom: 6vh;
+    text-align: left;
+    opacity: 0;
+    animation: fadeInDescription 1.5s ease 1.2s forwards;
+}
+
+@keyframes fadeInDescription {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Side Text - Right Side */
@@ -176,14 +235,14 @@ body {
 /* Bottom Question - Positioned at Bottom */
 .bottom-question {
     position: absolute;
-    bottom: 60px;
-    left: 60px;
+    bottom: 4vh;
+    left: 4vw;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.2vw;
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1vw;
 }
 
 /* Eye Letters in FOOD */
@@ -201,18 +260,18 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 220px;
-    height: 220px;
+    width: 15vw;
+    height: 15vw;
     background: white;
     border-radius: 50%;
-    border: 12px solid #333;
+    border: 0.8vw solid #333;
     overflow: hidden;
     z-index: 15;
 }
 
 .eyeball-in-letter {
-    width: 110px;
-    height: 110px;
+    width: 7.5vw;
+    height: 7.5vw;
     background: #333;
     border-radius: 50%;
     position: absolute;
@@ -232,8 +291,8 @@ body {
 /* Pink Cheeks */
 .cheek {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 6.8vw;
+    height: 6.8vw;
     background: #ff9bb3;
     border-radius: 50%;
     top: 50%;
@@ -255,14 +314,14 @@ body {
 /* Smiley Mouth */
 .smiley-mouth {
     position: absolute;
-    bottom: -20px;
-    left: 50%;
+    bottom: -1.4vw;
+    left: 45%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 60px;
-    border: 8px solid #333;
+    width: 6.2vw;
+    height: 3.1vw;
+    border: 0.55vw solid #333;
     border-top: none;
-    border-radius: 0 0 120px 120px;
+    border-radius: 0 0 8.2vw 8.2vw;
     background: transparent;
     opacity: 0;
     animation: fadeInMouth 0.8s ease 0.5s forwards;
@@ -274,9 +333,56 @@ body {
     }
 }
 
-@keyframes slideInFast {
+@keyframes waveInUp {
     to {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrolling Ticker */
+.ticker-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background: #ffffff;
+    overflow: hidden;
+    border-top: 0.3vw solid #333;
+}
+
+.ticker {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: scroll 60s linear infinite;
+}
+
+.ticker-content span {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: #333;
+    margin-right: 5vw;
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
 
@@ -325,13 +431,40 @@ body {
     }
     
     .fast-text {
-        font-size: 10rem;
+        font-size: 25vw;
+        color: #F5A911;
+        line-height: 0.7;
+        letter-spacing: -0.1em;
+        margin-top: 10vh;
+    }
+    
+    .fast-text span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(50px);
     }
     
     .food-text {
-        font-size: 8rem;
-        margin-left: 300px;
-        margin-top: 30px;
+        font-size: 25vw;
+        color: #F5A911;
+        line-height: 0.6;
+        letter-spacing: -0.1em;
+        margin-left: 0;
+        margin-top: 2vh;
+    }
+    
+    .food-text span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    
+    .food-description {
+        font-size: 3vw;
+        max-width: 80vw;
+        margin-left: 10vw;
+        margin-bottom: 5vh;
+        text-align: left;
     }
     
     .side-text {
@@ -342,9 +475,19 @@ body {
     }
     
     .bottom-question {
-        bottom: 40px;
-        left: 30px;
-        font-size: 1.1rem;
+        bottom: 2vh;
+        left: 2vw;
+        font-size: 3vw;
+        gap: 2vw;
+    }
+    
+    .ticker-container {
+        height: 10vh;
+    }
+    
+    .ticker-content span {
+        font-size: 4vw;
+        margin-right: 8vw;
     }
     
     .navbar {
@@ -363,19 +506,19 @@ body {
     }
 
     .eye-in-letter {
-        width: 140px;
-        height: 140px;
-        border: 8px solid #333;
+        width: 12vw;
+        height: 12vw;
+        border: 0.6vw solid #333;
     }
 
     .eyeball-in-letter {
-        width: 70px;
-        height: 70px;
+        width: 6vw;
+        height: 6vw;
     }
 
     .cheek {
-        width: 60px;
-        height: 60px;
+        width: 6vw;
+        height: 6vw;
     }
 
     .left-cheek {
@@ -387,9 +530,9 @@ body {
     }
 
     .smiley-mouth {
-        width: 80px;
-        height: 40px;
-        border-width: 5px;
-        border-radius: 0 0 80px 80px;
+        width: 16vw;
+        height: 8vw;
+        border-width: 0.8vw;
+        border-radius: 0 0 16vw 16vw;
     }
 }
