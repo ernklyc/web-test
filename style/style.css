@@ -131,7 +131,7 @@ body {
 
 .menu {
     display: flex;
-    align-items: center;
+    align-items: right;
     gap: 30px;
 }
 
@@ -421,7 +421,8 @@ body {
     display: flex;
     align-items: center;
     white-space: nowrap;
-    animation: scroll 60s linear infinite;
+    animation: scroll 20s linear infinite;
+    width: 400%;
 }
 
 .ticker-content span {
@@ -429,10 +430,10 @@ body {
     font-size: 2vw;
     font-weight: 700;
     color: #333;
-    margin-right: 0.1vw;
+    margin-right: 3vw;
     display: inline-flex;
     align-items: center;
-    gap: 0.05vw;
+    gap: 0.5vw;
 }
 
 @keyframes scroll {
@@ -440,7 +441,7 @@ body {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
