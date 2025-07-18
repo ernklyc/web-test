@@ -1,5 +1,28 @@
 {
+  "name": "elementra-restaurant",
+  "version": "1.0.0",
+  "description": "Modern fast food restaurant website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000",
+    "dev": "npx http-server . -p 3000 -o",
+    "build": "echo 'Build process not configured yet'"
+  },
+  "keywords": [
+    "restaurant",
+    "fast-food",
+    "website",
+    "responsive",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Elementra Team",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.7"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
