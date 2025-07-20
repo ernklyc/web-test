@@ -83,7 +83,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0;
+
 }
 
 /* Homepage */
@@ -99,39 +99,26 @@ body {
 .navbar {
     position: absolute;
     top: 30px;
-    left: 55px;
-    right: 55px;
+    left: 0;
+    right: 0;
     z-index: 1000;
     background: transparent;
-    border-radius: 15px;
-    padding: 15px 30px;
-}
-
-.navbar .container {
     width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar .row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    min-height: 50px;
-    flex-wrap: wrap;
-    position: relative;
+    padding: 15px 50px 15px 55px;
 }
 
 .navbar .logo {
-    position: absolute;
-    left: 0;
     flex-shrink: 0;
 }
 
 .menu-social-container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    margin-right: 0;
 }
 
 .logo img {
@@ -151,7 +138,7 @@ body {
     font-size: 16px;
     letter-spacing: 0.5px;
     padding: 8px 15px;
-    border-radius: 25px;
+
 }
 
 /* Social Icons */
@@ -165,7 +152,7 @@ body {
     font-size: 20px;
     text-decoration: none;
     padding: 8px;
-    border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -332,15 +319,27 @@ body {
     height: 15vw;
     background: #FFFFFF;
     border-radius: 50%;
-    border: 0.8vw solid #333;
+    border: 1.2vw solid #000000;
     overflow: hidden;
     z-index: 15;
+}
+
+.left-eye {
+    margin-left: 0.1em;
+}
+
+.left-eye-ball {
+    left: 18%;
+}
+
+.right-eye-ball {
+    left: 65%;
 }
 
 .eyeball-in-letter {
     width: 7.5vw;
     height: 7.5vw;
-    background: #333;
+    background: #000000;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -356,27 +355,23 @@ body {
     75% { transform: translate(-50%, -70%); }
 }
 
-/* Pink Cheeks */
+/* Cheeks */
 .cheek {
     position: absolute;
-    width: 6.8vw;
-    height: 6.8vw;
-    background: #ff9bb3;
+    width: 7.5vw;
+    height: 7.5vw;
+    background: #FFC6C6;
     border-radius: 50%;
-    top: 50%;
-    z-index: 15;
+    bottom: 1vw;
+    z-index: 100;
 }
 
 .left-cheek {
-    left: -80px;
-    top: 60%;
-    transform: translateY(-50%);
+    left: -6vw;
 }
 
 .right-cheek {
-    right: -80px;
-    top: 60%;
-    transform: translateY(-50%);
+    right: -6vw;
 }
 
 /* Smiley Mouth */
@@ -386,13 +381,13 @@ body {
     left: 45%;
     transform: translateX(-50%);
     width: 6.2vw;
-    height: 3.1vw;
-    border: 0.55vw solid #333;
+    height: 2.5vw;
+    border: 1vw solid #000;
     border-top: none;
-    border-radius: 0 0 8.2vw 8.2vw;
+    border-radius: 0 0 18vw 18vw;
     background: transparent;
+    animation: fadeInMouth 2s ease-in-out 1.5s forwards;
     opacity: 0;
-    animation: fadeInMouth 0.8s ease 0.5s forwards;
 }
 
 @keyframes fadeInMouth {
@@ -467,6 +462,12 @@ body {
 .emoji {
     font-size: 2.5rem;
     animation: bounce 2s ease-in-out infinite;
+}
+
+.emoji-img {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: inline-block;
 }
 
 @keyframes bounce {
@@ -563,7 +564,7 @@ body {
 .menu-badge {
     color: #333;
     padding: 8px 20px;
-    border-radius: 20px;
+
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -618,7 +619,7 @@ body {
     margin: 0 auto 20px;
     border-radius: 0;
     overflow: hidden;
-    box-shadow: none;
+
 }
 
 .menu-image img {
@@ -763,7 +764,7 @@ body {
     gap: 30px;
     background: rgba(255,255,255,0.03);
     padding: 25px;
-    border-radius: 16px;
+
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
@@ -774,7 +775,7 @@ body {
     background: rgba(255,255,255,0.08);
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
 }
 
 .menu-section-2 .menu-item-image {
@@ -782,7 +783,7 @@ body {
     height: 120px;
     overflow: hidden;
     flex-shrink: 0;
-    border-radius: 12px;
+
     border: 2px solid rgba(255,255,255,0.1);
     transition: all 0.3s ease;
 }
@@ -875,7 +876,7 @@ body {
 .menu-section-2 .view-menu-btn:hover {
     background-color: #f7b32b;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
 }
 
 /* Brand Logos Section */
@@ -1027,8 +1028,7 @@ body {
 
 .category-item {
     background: white;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    border-radius: 12px;
+
     overflow: hidden;
     opacity: 0;
     transform: translateY(30px);
@@ -1119,7 +1119,7 @@ body {
 
 .category-item:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
 }
 
 .category-item:hover .category-image img {
@@ -1236,15 +1236,14 @@ body {
     width: 40%;
     aspect-ratio: 1;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .square-image-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+
 }
 
 .square-image-card img {
@@ -1374,7 +1373,7 @@ body {
     color: #000;
     padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+
     font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -1387,7 +1386,7 @@ body {
 .footer-cta-btn:hover {
     background-color: #F7B32B;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
 }
 
 /* Column 2: Office */
@@ -1832,17 +1831,17 @@ body {
     justify-content: flex-start;
     min-height: 320px;
     position: relative;
-    border-radius: 16px;
+
     backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
 }
 
 .contact-card:hover {
     transform: translateY(-10px);
     border-color: #ffffff;
     background: rgba(255,255,255,0.1);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+
 }
 
 /* Card Icon */
@@ -1859,7 +1858,7 @@ body {
     left: 25px;
     width: 50px;
     height: 50px;
-    border-radius: 12px;
+
     transition: all 0.3s ease;
 }
 
@@ -2135,7 +2134,7 @@ body {
         width: 16vw;
         height: 8vw;
         border-width: 0.8vw;
-        border-radius: 0 0 16vw 16vw;
+    
     }
     
     .content-row {
@@ -2613,7 +2612,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+
 }
 
 /* Enhanced Typography */
@@ -2653,7 +2652,7 @@ p {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
 }
 
 /* Enhanced Spacing Utilities */
@@ -2667,13 +2666,11 @@ p {
 
 /* Enhanced Card Shadows */
 .card-shadow {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
+
+
 }
 
-.card-shadow:hover {
-    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-}
+
 
 /* Question Section - Fixed at Top */
 .question-section {
@@ -2684,9 +2681,9 @@ p {
     z-index: 9999;
     background: rgba(220, 53, 69, 0.95);
     padding: 15px 30px;
-    border-radius: 50px;
+
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
 }
 
 .question-container {
