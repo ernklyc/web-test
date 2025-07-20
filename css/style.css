@@ -23,45 +23,150 @@ body {
 
 .content-section {
     min-height: 50vh;
-    background: #F1EADF;
-    padding: 4rem 2rem;
+    background: #f6f0e8;
+    padding: 4rem 3rem;
 }
 
 .content-row {
-    display: flex;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    max-width: 95%;
     margin: 0 auto;
-    gap: 2rem;
-    align-items: stretch;
+    gap: 4rem;
+    align-items: start;
 }
 
 .left-column {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 3rem;
     justify-content: space-between;
 }
 
 .right-column {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
-    margin-top: 3rem;
-    align-self: flex-start;
+    gap: 2rem;
+    position: relative;
+    align-items: flex-end;
 }
 
-.right-column .image-container {
-    margin-top: 0;
-}
-
-.right-column .text-content {
+/* Küçük burger görseli sol altta */
+.image-container.small-burger {
+    width: 100%;
+    max-width: 800px;
+    height: 800px;
+    border-radius: 0;
+    overflow: hidden;
     margin-top: auto;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.image-container.small-burger::before {
+    content: '🍔';
+    font-size: 4rem;
+    opacity: 0.1;
+    position: absolute;
+    z-index: 1;
+}
+
+.image-container.small-burger img {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ana kadın görseli sağ kolonda */
+.image-container.main-hero {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: none;
+}
+
+.image-container.main-hero::before {
+    content: '👩‍🍳';
+    font-size: 6rem;
+    opacity: 0.1;
+    position: absolute;
+    z-index: 1;
+}
+
+.image-container.main-hero img {
+    position: relative;
+    z-index: 2;
+}
+
+/* Overlay doodle pozisyonu */
+.overlay-doodle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+/* Alt açıklama metni sağ altta */
+.bottom-text {
+    max-width: 90%;
+    margin-left: auto;
+    text-align: right;
 }
 
 .text-content {
-    flex: 1;
+    flex: 2;
+}
+
+/* Section Header Styles */
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.quality-badge {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.decorative-lines {
+    margin-bottom: 1.5rem;
+}
+
+.about-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #333;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.about-description,
+.about-mission {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+}
+
+.feature-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .image-content {
@@ -406,7 +511,7 @@ body {
 /* Scrolling Ticker */
 .ticker-container {
     width: 100%;
-    height: 20vh;
+    height: 15vh;
     background: #FFFFFF;
     overflow: hidden;
     position: relative;
@@ -551,7 +656,7 @@ body {
 }
 
 .menu-container {
-    max-width: 1600px;
+    max-width: 95%;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
@@ -586,7 +691,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 60px;
-    max-width: 1200px;
+    max-width: 95%;
     margin: 0 auto;
     flex-wrap: nowrap;
 }
@@ -662,7 +767,7 @@ body {
 }
 
 .menu-container {
-    max-width: 1600px;
+    max-width: 95%;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
@@ -694,7 +799,7 @@ body {
 }
 
 .menu-section-2 .menu-container {
-    max-width: 1600px;
+    max-width: 95%;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -886,7 +991,7 @@ body {
 }
 
 .brands-container {
-    max-width: 1200px;
+    max-width: 95%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -991,7 +1096,7 @@ body {
 }
 
 .categories-container {
-    max-width: 1400px;
+    max-width: 95%;
     margin: 0 auto;
     padding: 0 30px;
     padding-top: 400px;
@@ -1289,9 +1394,9 @@ body {
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 25px;
 }
 
 /* Main Footer Content */
@@ -1592,12 +1697,22 @@ body {
     }
     
     .content-row {
-        flex-direction: column;
-        gap: 40px;
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
     
-    .left-column, .right-column {
-        width: 100%;
+    .right-column {
+        order: -1;
+    }
+    
+    .image-container.main-hero {
+        height: 600px;
+    }
+    
+    .bottom-text {
+        text-align: left;
+        margin-left: 0;
+        max-width: 100%;
     }
     
     .menu-grid {
@@ -1703,7 +1818,7 @@ body {
     
     .menu-container,
     .content-section {
-        padding: 0 15px;
+        padding: 2rem 15px;
     }
     
     .hero-content {
@@ -1720,6 +1835,24 @@ body {
     
     .navbar .container {
         padding: 0 15px;
+    }
+    
+    .content-row {
+        gap: 2rem;
+    }
+    
+    .image-container.main-hero {
+        height: 500px;
+    }
+    
+    .image-container.small-burger {
+        height: 450px;
+        max-width: 100%;
+    }
+    
+    .overlay-doodle {
+        bottom: 10px;
+        right: 10px;
     }
 
     .categories-section {
@@ -1779,9 +1912,9 @@ body {
 }
 
 .flavor-town-container {
-    max-width: 1200px;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 25px;
 }
 
 /* Main Title Styling */
@@ -1812,7 +1945,7 @@ body {
     align-items: stretch;
     gap: 25px;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 95%;
     margin: 0 auto;
 }
 
@@ -2590,9 +2723,9 @@ body {
 
 /* Enhanced Layout Improvements */
 .container {
-    max-width: 1400px;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
 /* Enhanced Grid System */
