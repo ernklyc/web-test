@@ -29,20 +29,62 @@ function createTickerContent() {
     }
 }
 
-// Sayfa yüklendiğinde animasyonları başlat
-window.addEventListener('load', function() {
-    // Ticker içeriğini oluştur
-    createTickerContent();
+// Optimized Intersection Observer for animations
+function initializeAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
     
-    // Navbar scroll efekti
-    window.addEventListener('scroll', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animatedElements = document.querySelectorAll(
+        '.menu-item, .category-item, .contact-card, .menu-item-detailed, .brand-logo'
+    );
+    
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Enhanced performance with requestAnimationFrame
+function optimizeAnimations() {
+    let ticking = false;
+    
+    function updateNavbar() {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
     });
+}
+
+// Sayfa yüklendiğinde animasyonları başlat
+window.addEventListener('load', function() {
+    // Ticker içeriğini oluştur
+    createTickerContent();
+    
+    // Initialize optimized animations
+    initializeAnimations();
+    optimizeAnimations();
     
     // Smooth scroll için
     const links = document.querySelectorAll('a[href^="#"]');

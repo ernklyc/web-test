@@ -12,7 +12,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    background: #B83B31;
+    background: #b83a31;
 }
 
 .main-section {
@@ -272,7 +272,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg,#B83B31, #B83B31);
+    background: linear-gradient(135deg, #B83B31, #B83B31);
 }
 
 /* Hero Content - Simple Layout Like Screenshot */
@@ -321,10 +321,21 @@ body {
     transform: translateY(100px);
 }
 
-.letter-1 { animation: waveInUp 0.8s ease 0.1s forwards; }
-.letter-2 { animation: waveInUp 0.8s ease 0.3s forwards; }
-.letter-3 { animation: waveInUp 0.8s ease 0.5s forwards; }
-.letter-4 { animation: waveInUp 0.8s ease 0.7s forwards; }
+.letter-1 {
+    animation: waveInUp 0.8s ease 0.1s forwards;
+}
+
+.letter-2 {
+    animation: waveInUp 0.8s ease 0.3s forwards;
+}
+
+.letter-3 {
+    animation: waveInUp 0.8s ease 0.5s forwards;
+}
+
+.letter-4 {
+    animation: waveInUp 0.8s ease 0.7s forwards;
+}
 
 /* FOOD Text - Big and Simple */
 .food-text {
@@ -345,10 +356,21 @@ body {
     transform: translateY(100px);
 }
 
-.letter-5 { animation: waveInUp 0.8s ease 0.9s forwards; }
-.letter-6 { animation: waveInUp 0.8s ease 1.1s forwards; }
-.letter-7 { animation: waveInUp 0.8s ease 1.3s forwards; }
-.letter-8 { animation: waveInUp 0.8s ease 1.5s forwards; }
+.letter-5 {
+    animation: waveInUp 0.8s ease 0.9s forwards;
+}
+
+.letter-6 {
+    animation: waveInUp 0.8s ease 1.1s forwards;
+}
+
+.letter-7 {
+    animation: waveInUp 0.8s ease 1.3s forwards;
+}
+
+.letter-8 {
+    animation: waveInUp 0.8s ease 1.5s forwards;
+}
 
 /* Second Line Animation */
 .second-line {
@@ -375,6 +397,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -454,10 +477,23 @@ body {
 }
 
 @keyframes lookAroundLetter {
-    0%, 100% { transform: translate(-50%, -50%); }
-    25% { transform: translate(-70%, -50%); }
-    50% { transform: translate(-30%, -50%); }
-    75% { transform: translate(-50%, -70%); }
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        transform: translate(-70%, -50%);
+    }
+
+    50% {
+        transform: translate(-30%, -50%);
+    }
+
+    75% {
+        transform: translate(-50%, -70%);
+    }
 }
 
 /* Cheeks */
@@ -547,6 +583,7 @@ body {
     0% {
         transform: translateX(0%);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -576,8 +613,15 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 @keyframes fadeInUp {
@@ -585,6 +629,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -596,9 +641,55 @@ body {
         opacity: 0;
         transform: translateY(100px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Optimized alternating animations */
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -621,29 +712,29 @@ body {
     animation-delay: 1.2s;
 }
 
-/* Individual animations for content section elements */
+/* Optimized staggered animations for content section elements */
 .content-section .left-column .text-content:not(.static-text) {
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 1.5s;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
 .content-section .left-column .image-container {
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 2s;
+    animation: slideInFromTop 0.8s ease-out forwards;
+    animation-delay: 0.4s;
 }
 
 .content-section .right-column .image-container {
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 2.5s;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    animation-delay: 0.6s;
 }
 
 .content-section .right-column .text-content:not(.static-text) {
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 3s;
+    animation: slideInFromTop 0.8s ease-out forwards;
+    animation-delay: 0.8s;
 }
 
 /* Menu Section Styles */
@@ -651,8 +742,8 @@ body {
     padding: 80px 0;
     background-color: #F1EADF;
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 3.5s;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    animation-delay: 1s;
 }
 
 .menu-container {
@@ -698,24 +789,6 @@ body {
 
 .menu-item {
     text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.menu-item:nth-child(1) {
-    animation-delay: 4s;
-}
-
-.menu-item:nth-child(2) {
-    animation-delay: 4.2s;
-}
-
-.menu-item:nth-child(3) {
-    animation-delay: 4.4s;
-}
-
-.menu-item:nth-child(4) {
-    animation-delay: 4.6s;
 }
 
 .menu-image {
@@ -755,7 +828,7 @@ body {
     background: linear-gradient(to bottom, #F1EADF 50%, #B83B31 50%);
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 0.8s ease-out 4s forwards;
+    animation: slideInFromBottom 0.8s ease-out 2s forwards;
     position: relative;
 }
 
@@ -985,7 +1058,7 @@ body {
     .menu-container {
         padding: 0 30px;
     }
-    
+
     .menu-row {
         gap: 40px;
     }
@@ -996,20 +1069,20 @@ body {
         grid-template-columns: 1fr;
         gap: 0;
     }
-    
+
     .menu-header {
         text-align: center;
         padding: 20px 0;
     }
-    
+
     .menu-badge {
         font-size: 2.8rem;
     }
-    
+
     .menu-title {
         font-size: 2.8rem;
     }
-    
+
     .menu-description {
         text-align: left;
         max-width: 100%;
@@ -1020,38 +1093,38 @@ body {
     .menu-container {
         padding: 0 20px;
     }
-    
+
     .menu-item-detailed {
         gap: 20px;
         padding-bottom: 25px;
     }
-    
+
     .menu-item-image {
         width: 80px;
         height: 80px;
     }
-    
+
     .menu-item-name {
         font-size: 1.2rem;
     }
-    
+
     .menu-item-price {
         font-size: 1.6rem;
     }
-    
+
     .menu-badge {
         font-size: 2.2rem;
     }
-    
+
     .menu-title {
         font-size: 2.2rem;
     }
-    
+
     .brands-container {
         flex-wrap: wrap;
         gap: 20px;
     }
-    
+
     .brand-logo {
         flex: 0 0 calc(33.333% - 20px);
     }
@@ -1095,11 +1168,7 @@ body {
 
 .category-item {
     background: white;
-
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease-out 4.5s forwards;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
 }
@@ -1269,6 +1338,7 @@ body {
     0% {
         transform: translateX(-20%);
     }
+
     100% {
         transform: translateX(20%);
     }
@@ -1278,6 +1348,7 @@ body {
     0% {
         transform: translateX(20%);
     }
+
     100% {
         transform: translateX(-20%);
     }
@@ -1333,7 +1404,7 @@ body {
         gap: 30px;
         padding: 0 20px;
     }
-    
+
     .square-image-card {
         width: 80%;
         aspect-ratio: 1;
@@ -1351,7 +1422,7 @@ body {
 
 /* Footer Section */
 .footer-section {
-    background-color: #5C2B1E;
+    background-color: #65261F;
     color: #FFFEFE;
     padding: 60px 0 0 0;
 }
@@ -1372,17 +1443,30 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
-    padding: 40px 0;
+    margin-bottom: 0px;
+    padding: 20px 0;
 }
 
-.footer-slogan-text h2 {
-    font-family: 'Poppins', sans-serif;
+.footer-slogan-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-slogan-left h2 {
+    font-family: 'Bebas Neue', cursive;
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: bold;
     color: #FFFEFE;
-    margin: 0;
-    text-transform: lowercase;
+    margin: 0 0 0 250px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-logo-img {
+    height: 60px;
+    width: auto;
 }
 
 .footer-slogan-right {
@@ -1400,7 +1484,7 @@ body {
     line-height: 1.1;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
 }
 
 /* Four Column Grid */
@@ -1409,6 +1493,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 40px;
+    justify-items: start;
 }
 
 /* Column 1: Brand */
@@ -1416,6 +1501,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    justify-self: start;
 }
 
 .footer-logo h3 {
@@ -1438,7 +1524,7 @@ body {
 
 .footer-cta-btn {
     background-color: #FFC107;
-    color: #000;
+    color: #ffffff;
     padding: 12px 24px;
     border: none;
 
@@ -1458,11 +1544,15 @@ body {
 }
 
 /* Column 2: Office */
+.footer-office {
+    text-align: left;
+}
+
 .footer-office h4 {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.2rem;
     color: white;
-    margin: 0 0 15px 0;
+    margin: 0 0 30px 200px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -1470,16 +1560,20 @@ body {
 .office-details p {
     font-size: 0.9rem;
     color: white;
-    margin: 0 0 8px 0;
+    margin: 0 0 8px 200px;
     line-height: 1.4;
 }
 
 /* Column 3: Links */
+.footer-links {
+    text-align: left;
+}
+
 .footer-links h4 {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.2rem;
     color: white;
-    margin: 0 0 15px 0;
+    margin: 0 0 15px 150px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -1499,6 +1593,7 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    margin: 0 0 8px 150px;
 }
 
 .footer-links a:hover {
@@ -1507,6 +1602,10 @@ body {
 }
 
 /* Column 4: Social */
+.footer-social {
+    text-align: right;
+}
+
 .footer-social h4 {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.2rem;
@@ -1520,6 +1619,7 @@ body {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .social-icon {
@@ -1546,6 +1646,7 @@ body {
     width: 20px;
     height: 20px;
 }
+
 /* Copyright Section */
 .footer-copyright {
     display: flex;
@@ -1585,8 +1686,15 @@ body {
 
 /* Animations */
 @keyframes wave {
-    0%, 100% { transform: rotate(30deg) translateX(0); }
-    50% { transform: rotate(60deg) translateX(2px); }
+
+    0%,
+    100% {
+        transform: rotate(30deg) translateX(0);
+    }
+
+    50% {
+        transform: rotate(60deg) translateX(2px);
+    }
 }
 
 /* Footer Responsive Design */
@@ -1595,7 +1703,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-    
+
     .footer-slogan-text h2,
     .footer-slogan-right h2 {
         font-size: 2.5rem;
@@ -1605,263 +1713,441 @@ body {
 @media (max-width: 768px) {
     .footer-slogan-row {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 30px;
-        margin-bottom: 40px;
+        margin-bottom: 0px;
     }
-    
+
     .footer-info-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 30px;
     }
-    
+
     .footer-copyright {
         flex-direction: column;
         gap: 10px;
         text-align: center;
     }
-    
+
     .footer-slogan-text h2,
     .footer-slogan-right h2 {
         font-size: 2rem;
     }
-    
+
     .footer-cta-btn {
         align-self: center;
     }
-    
+
     .social-icons {
         justify-content: center;
     }
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
+@media (max-width: 1400px) {
+    .hero-content {
+        padding: 0 40px;
+    }
+    
+    .fast-text {
+        font-size: 24vw;
+    }
+    
+    .food-text {
+        font-size: 24vw;
+        margin-left: 32vw;
+    }
+    
+    .categories-title {
+        font-size: 18rem;
+    }
+}
+
 @media (max-width: 1200px) {
     .menu-grid {
         gap: 40px;
         max-width: 1000px;
     }
-    
+
     .content-row {
         max-width: 1000px;
+        gap: 3rem;
+    }
+    
+    .navbar {
+        padding: 12px 30px;
+    }
+    
+    .menu {
+        gap: 20px;
+    }
+    
+    .categories-title {
+        font-size: 16rem;
+    }
+    
+    .flavor-town-title h1 {
+        font-size: 8rem;
     }
 }
 
 @media (max-width: 992px) {
-    .navbar .container .row {
-        flex-direction: column;
-        gap: 20px;
+    .navbar {
+        padding: 10px 25px;
     }
     
     .menu-social-container {
-        flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
-    
+
     .content-row {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
-    
+
     .right-column {
         order: -1;
     }
-    
+
     .image-container.main-hero {
-        height: 600px;
+        height: 500px;
+        justify-content: center;
     }
-    
+
     .bottom-text {
         text-align: left;
         margin-left: 0;
         max-width: 100%;
     }
-    
+
     .menu-grid {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
-    }
-    
-    .menu-item {
-        flex: 0 1 calc(50% - 15px);
+        max-width: 600px;
     }
 
     .categories-title {
-        font-size: 3rem;
-        color: white;
+        font-size: 12rem;
     }
 
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
         max-width: 800px;
+        gap: 20px;
     }
 
     .category-content {
-        height: 180px;
+        height: 200px;
     }
 
     .category-text {
-        padding: 25px;
+        padding: 20px;
     }
 
     .category-text h3 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+    
+    .fast-text {
+        font-size: 20vw;
+    }
+    
+    .food-text {
+        font-size: 20vw;
+        margin-left: 25vw;
+    }
+    
+    .food-description {
+        font-size: 1.8vw;
+        margin-left: 60vw;
+        max-width: 40vw;
+    }
+    
+    .flavor-town-title h1 {
+        font-size: 6rem;
+    }
+    
+    .contact-cards-container {
+        gap: 20px;
+    }
+    
+    .contact-card {
+        min-width: 280px;
     }
 }
 
 @media (max-width: 768px) {
-    .first-line .fast-text {
-        font-size: 80px;
+    .navbar {
+        padding: 8px 20px;
+        flex-direction: column;
+        gap: 15px;
     }
     
-    .second-line .food-text {
-        font-size: 80px;
+    .menu-social-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
     
+    .menu a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .fast-text {
+        font-size: 18vw;
+    }
+
+    .food-text {
+        font-size: 18vw;
+        margin-left: 20vw;
+    }
+    
+    .food-description {
+        font-size: 2.5vw;
+        margin-left: 50vw;
+        max-width: 50vw;
+    }
+
     .menu-title {
-        font-size: 36px;
-    }
-    
-    .about-title {
-        font-size: 28px;
-    }
-    
-    .menu-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .menu-item {
-        flex: none;
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    .navbar .menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .ticker-content {
-        font-size: 16px;
-    }
-    
-    .footer-title {
         font-size: 2.5rem;
     }
-    
-    .footer-cards {
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .menu-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
+        max-width: 400px;
+    }
+
+    .content-row {
+        gap: 2rem;
     }
     
-    .footer-card {
-        padding: 30px 20px;
+    .content-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .ticker-content span {
+        font-size: 3vw;
+    }
+    
+    .categories-title {
+        font-size: 8rem;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .category-content {
+        height: 180px;
+    }
+    
+    .flavor-town-title h1 {
+        font-size: 4rem;
+    }
+    
+    .contact-cards-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-card {
+        min-width: auto;
+        width: 100%;
+        min-height: 200px;
+    }
+    
+    .image-container.main-hero {
+        height: 400px;
+    }
+    
+    .image-container.small-burger {
+        height: 350px;
     }
 }
 
 @media (max-width: 480px) {
-    .first-line .fast-text {
-        font-size: 60px;
+    .navbar {
+        padding: 8px 15px;
     }
     
-    .second-line .food-text {
-        font-size: 60px;
-    }
-    
-    .menu-title {
-        font-size: 28px;
-    }
-    
-    .about-title {
-        font-size: 24px;
-    }
-    
-    .menu-container,
-    .content-section {
-        padding: 2rem 15px;
+    .menu a {
+        font-size: 12px;
+        padding: 4px 8px;
     }
     
     .hero-content {
         padding: 0 15px;
     }
+
+    .fast-text {
+        font-size: 16vw;
+    }
+
+    .food-text {
+        font-size: 16vw;
+        margin-left: 15vw;
+    }
     
+    .food-description {
+        font-size: 3vw;
+        margin-left: 45vw;
+        max-width: 55vw;
+    }
+
+    .menu-title {
+        font-size: 2rem;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .menu-container,
+    .content-section {
+        padding: 1.5rem 15px;
+    }
+
     .bottom-question {
-        font-size: 14px;
+        font-size: 3.5vw;
+        bottom: 3vh;
+        left: 3vw;
     }
-    
-    .ticker-content {
-        font-size: 14px;
+
+    .ticker-content span {
+        font-size: 4vw;
     }
-    
-    .navbar .container {
-        padding: 0 15px;
-    }
-    
+
     .content-row {
-        gap: 2rem;
+        gap: 1.5rem;
     }
-    
+
     .image-container.main-hero {
-        height: 500px;
+        height: 300px;
     }
-    
+
     .image-container.small-burger {
-        height: 450px;
+        height: 250px;
         max-width: 100%;
-    }
-    
-    .overlay-doodle {
-        bottom: 10px;
-        right: 10px;
     }
 
     .categories-section {
-        padding: 40px 0;
+        padding: 30px 15px;
     }
 
     .categories-title {
-        font-size: 2rem;
-        color: white;
+        font-size: 6rem;
     }
 
     .categories-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 1fr);
+        gap: 10px;
         max-width: 100%;
     }
 
     .category-content {
-        height: 140px;
-        flex-direction: column;
+        height: 150px;
     }
 
     .category-text {
-        padding: 15px;
+        padding: 12px;
         text-align: center;
     }
 
     .category-text h3 {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .category-text p {
-        font-size: 0.7rem;
-        margin: 0 0 10px 0;
-    }
-
-    .category-image {
-        height: 60px;
+        font-size: 0.8rem;
+        margin: 0 0 8px 0;
     }
     
-    .footer-title {
-        font-size: 2rem;
+    .flavor-town-title h1 {
+        font-size: 3rem;
+    }
+    
+    .contact-card {
+        min-height: 180px;
+        padding: 15px 12px;
+    }
+    
+    .menu-section-2 .menu-badge {
+        font-size: 2.5rem;
+    }
+    
+    .menu-section-2 .menu-title {
+        font-size: 2.5rem;
+    }
+    
+    .menu-section-2 .menu-row {
+        gap: 15px;
+    }
+    
+    .menu-item-detailed {
+        gap: 12px;
+        padding-bottom: 15px;
+    }
+    
+    .menu-item-image {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .menu-item-name {
+        font-size: 1.1rem;
+    }
+    
+    .menu-item-price {
+        font-size: 1.5rem;
+    }
+    
+    .brands-container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .brand-logo {
+        flex: 0 0 calc(50% - 15px);
     }
     
     .footer-section {
-        padding: 60px 0;
+        padding: 40px 15px 0 15px;
+    }
+    
+    .footer-slogan-left h2 {
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    .footer-info-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-office h4,
+    .footer-links h4 {
+        margin-left: 0;
+    }
+    
+    .office-details p,
+    .footer-links a {
+        margin-left: 0;
     }
 }
 
@@ -1869,7 +2155,8 @@ body {
 
 /* Flavor Town Communication Block */
 .flavor-town-section {
-    background: #B83B31; /* Warm brick red color */
+    background: #B83B31;
+    /* Warm brick red color */
     padding: 80px 0;
     width: 100%;
 }
@@ -1892,7 +2179,7 @@ body {
 
 .flavor-town-title h1 {
     font-family: 'Bebas Neue', 'Arial Narrow', 'Arial Black', sans-serif;
-    font-size: 10rem;
+    font-size: 9rem;
     font-weight: 900;
     color: #FFFEFE;
     text-transform: uppercase;
@@ -1917,8 +2204,7 @@ body {
     flex: 1;
     max-width: 380px;
     min-width: 300px;
-    background: rgba(255,255,255,0.05);
-    border: 2px solid rgba(255,255,255,0.8);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     padding: 45px 35px;
     text-align: left;
     display: flex;
@@ -1931,8 +2217,8 @@ body {
 
 /* Card Icon */
 .card-icon {
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.9);
     padding: 12px;
     margin-bottom: 30px;
     display: flex;
@@ -1981,7 +2267,7 @@ body {
 .card-description {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     margin: 0;
     text-align: left;
@@ -2009,75 +2295,75 @@ body {
     .flavor-town-section {
         padding: 60px 0;
     }
-    
+
     .flavor-town-container {
         padding: 0 20px;
     }
-    
+
     .flavor-town-title h1 {
         font-size: 3rem;
         letter-spacing: 0.1em;
     }
-    
+
     .contact-cards-container {
         flex-direction: column;
         gap: 20px;
         align-items: center;
     }
-    
+
     .contact-card {
-         max-width: 100%;
-         min-width: auto;
-         width: 100%;
-         min-height: 250px;
-         padding: 30px 20px;
-         text-align: left;
-         align-items: flex-start;
-     }
-     
-     .card-icon {
-          top: 15px;
-          left: 15px;
-          width: 35px;
-          height: 35px;
-          padding: 6px;
-      }
-      
-      .card-icon svg {
-          width: 20px;
-          height: 20px;
-      }
-      
-      .card-content {
-           bottom: 15px;
-           left: 15px;
-           right: 15px;
-       }
-      
-      .card-title {
-          margin: 0 0 10px 0;
-          text-align: left;
-          font-size: 1.2rem;
-      }
-      
-      .card-description {
-          text-align: left;
-          font-size: 0.9rem;
-      }
-      
-      .card-link {
-          text-align: left;
-          font-size: 1.1rem;
-      }
-    
+        max-width: 100%;
+        min-width: auto;
+        width: 100%;
+        min-height: 250px;
+        padding: 30px 20px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .card-icon {
+        top: 15px;
+        left: 15px;
+        width: 35px;
+        height: 35px;
+        padding: 6px;
+    }
+
+    .card-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .card-content {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+    }
+
+    .card-title {
+        margin: 0 0 10px 0;
+        text-align: left;
+        font-size: 1.2rem;
+    }
+
+    .card-description {
+        text-align: left;
+        font-size: 0.9rem;
+    }
+
+    .card-link {
+        text-align: left;
+        font-size: 1.1rem;
+    }
+
     .card-title {
         font-size: 1.2rem;
     }
-    
+
     .card-description {
         font-size: 0.9rem;
     }
-    
+
     .card-link {
         font-size: 1.1rem;
     }
@@ -2091,11 +2377,11 @@ body {
         justify-content: center;
         align-items: flex-start;
     }
-    
+
     .first-line {
         margin-bottom: -30px;
     }
-    
+
     .fast-text {
         font-size: 25vw;
         color: #F5A911;
@@ -2103,13 +2389,13 @@ body {
         letter-spacing: -0.1em;
         margin-top: 10vh;
     }
-    
+
     .fast-text span {
         display: inline-block;
         opacity: 0;
         transform: translateY(50px);
     }
-    
+
     .food-text {
         font-size: 25vw;
         color: #F5A911;
@@ -2118,13 +2404,13 @@ body {
         margin-left: 0;
         margin-top: 2vh;
     }
-    
+
     .food-text span {
         display: inline-block;
         opacity: 0;
         transform: translateY(50px);
     }
-    
+
     .food-description {
         font-size: 3vw;
         max-width: 80vw;
@@ -2132,40 +2418,40 @@ body {
         margin-bottom: 5vh;
         text-align: left;
     }
-    
+
     .side-text {
         max-width: 100%;
         font-size: 1.1rem;
         margin-left: 0;
         margin-top: 30px;
     }
-    
+
     .bottom-question {
         bottom: 2vh;
         left: 2vw;
         font-size: 3vw;
         gap: 2vw;
     }
-    
+
     .ticker-container {
         height: 10vh;
     }
-    
+
     .ticker-content span {
         font-size: 4vw;
         margin-right: 8vw;
     }
-    
+
     .navbar {
         left: 20px;
         right: 20px;
         padding: 10px 20px;
     }
-    
+
     .menu {
         gap: 15px;
     }
-    
+
     .menu a {
         font-size: 14px;
         padding: 6px 12px;
@@ -2199,67 +2485,67 @@ body {
         width: 16vw;
         height: 8vw;
         border-width: 0.8vw;
-    
+
     }
-    
+
     .content-row {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .left-column,
     .right-column {
         gap: 2rem;
     }
-    
+
     .right-column {
         margin-top: 0;
     }
-    
+
     .image-container {
         height: 250px;
     }
-    
+
     .about-title {
         font-size: 2rem;
     }
-    
+
     .about-description {
         font-size: 0.9rem;
     }
-    
+
     .about-mission {
         font-size: 0.9rem;
     }
-    
+
     .hero-image img {
         width: 100%;
         max-width: 300px;
     }
-    
+
     .burger-image img {
         width: 100%;
         max-width: 300px;
     }
-    
+
     .burger-text {
         font-size: 1.5rem;
     }
-    
+
     .eye {
         width: 8px;
         height: 8px;
     }
-    
+
     .face-mouth {
         width: 20px;
         height: 10px;
     }
-    
+
     .feature-description {
         font-size: 0.9rem;
     }
-    
+
     .line {
         width: 15px;
         height: 2px;
@@ -2272,55 +2558,55 @@ body {
         padding: 40px 20px;
         height: 120vh;
     }
-    
+
     .hero-content {
         padding: 0 40px;
     }
-    
+
     .fast-text {
         font-size: 22vw;
     }
-    
+
     .food-text {
         font-size: 22vw;
         margin-left: 30vw;
     }
-    
+
     .food-description {
         font-size: 1.2vw;
         margin-left: 65vw;
         max-width: 35vw;
     }
-    
+
     .categories-section {
         padding: 60px 20px;
     }
-    
+
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    
+
     .categories-title {
         font-size: 15rem;
     }
-    
+
     .menu-section-2 {
         padding: 60px 20px;
     }
-    
+
     .menu-row {
         gap: 40px;
     }
-    
+
     .content-row {
         gap: 30px;
     }
-    
+
     .content-section {
         padding: 3rem 1.5rem;
     }
-    
+
     .ticker-content span {
         font-size: 2.5vw;
         margin-right: 2vw;
@@ -2334,15 +2620,15 @@ body {
         left: 20px;
         right: 20px;
     }
-    
+
     .menu-social-container {
         gap: 15px;
     }
-    
+
     .menu {
         gap: 20px;
     }
-    
+
     .menu a {
         font-size: 14px;
         padding: 6px 12px;
@@ -2355,106 +2641,106 @@ body {
         left: 15px;
         right: 15px;
     }
-    
+
     .navbar .row {
         flex-direction: column;
         gap: 15px;
         text-align: center;
         justify-content: center;
     }
-    
+
     .navbar .logo {
         order: 1;
         position: static;
     }
-    
+
     .menu-social-container {
         order: 2;
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
     }
-    
+
     .menu {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .menu a {
         font-size: 13px;
         padding: 5px 10px;
     }
-    
+
     .social-icons {
         gap: 8px;
     }
-    
+
     .hero-section {
         height: 100vh;
         padding: 20px 15px;
     }
-    
+
     .hero-content {
         padding: 0 20px;
     }
-    
+
     .fast-text {
         font-size: 28vw;
     }
-    
+
     .food-text {
         font-size: 28vw;
         margin-left: 25vw;
     }
-    
+
     .food-description {
         font-size: 3.5vw;
         margin-left: 55vw;
         max-width: 45vw;
     }
-    
+
     .categories-section {
         padding: 40px 15px;
     }
-    
+
     .categories-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .categories-title {
         font-size: 12rem;
     }
-    
+
     .menu-section-2 {
         padding: 40px 15px;
     }
-    
+
     .menu-row {
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .content-section {
         padding: 2rem 1rem;
     }
-    
+
     .content-row {
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .ticker-content span {
         font-size: 4vw;
         margin-right: 3vw;
     }
-    
+
     .contact-cards-container {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .contact-card {
         min-height: 180px;
         padding: 20px 15px;
@@ -2468,122 +2754,122 @@ body {
         left: 10px;
         right: 10px;
     }
-    
+
     .navbar .row {
         gap: 10px;
     }
-    
+
     .menu {
         gap: 8px;
     }
-    
+
     .menu a {
         font-size: 11px;
         padding: 4px 8px;
     }
-    
+
     .social-link {
         width: 32px;
         height: 32px;
         font-size: 16px;
     }
-    
+
     .hero-section {
         height: 90vh;
         padding: 15px 10px;
     }
-    
+
     .hero-content {
         padding: 0 10px;
     }
-    
+
     .fast-text {
         font-size: 32vw;
     }
-    
+
     .food-text {
         font-size: 32vw;
         margin-left: 20vw;
     }
-    
+
     .food-description {
         font-size: 4.5vw;
         margin-left: 50vw;
         max-width: 50vw;
     }
-    
+
     .categories-section {
         padding: 30px 10px;
     }
-    
+
     .categories-grid {
         grid-template-columns: 1fr;
         gap: 10px;
     }
-    
+
     .categories-title {
         font-size: 8rem;
     }
-    
+
     .menu-section-2 {
         padding: 30px 10px;
     }
-    
+
     .menu-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .content-section {
         padding: 1.5rem 0.5rem;
     }
-    
+
     .content-row {
         gap: 15px;
     }
-    
+
     .left-column,
     .right-column {
         gap: 15px;
     }
-    
+
     .image-container {
         height: 200px;
     }
-    
+
     .about-title {
         font-size: 1.5rem;
     }
-    
+
     .about-description,
     .about-mission {
         font-size: 0.8rem;
     }
-    
+
     .ticker-content span {
         font-size: 5vw;
         margin-right: 4vw;
     }
-    
+
     .contact-cards-container {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .contact-card {
         min-height: 160px;
         padding: 15px 10px;
     }
-    
+
     .footer-section {
         padding: 20px 10px 0 10px;
     }
-    
+
     .footer-content {
-         flex-direction: column;
-         gap: 15px;
-         text-align: center;
-     }
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
 
 /* Extra Small Devices (320px and below) */
@@ -2593,60 +2879,60 @@ body {
         left: 8px;
         right: 8px;
     }
-    
+
     .navbar .row {
         gap: 8px;
     }
-    
+
     .menu a {
         font-size: 10px;
         padding: 3px 6px;
     }
-    
+
     .social-link {
         width: 28px;
         height: 28px;
         font-size: 14px;
     }
-    
+
     .hero-section {
         height: 85vh;
         padding: 10px 8px;
     }
-    
+
     .fast-text {
         font-size: 35vw;
     }
-    
+
     .food-text {
         font-size: 35vw;
         margin-left: 15vw;
     }
-    
+
     .food-description {
         font-size: 5vw;
         margin-left: 45vw;
         max-width: 55vw;
     }
-    
+
     .categories-title {
         font-size: 6rem;
     }
-    
+
     .about-title {
         font-size: 1.2rem;
     }
-    
+
     .about-description,
     .about-mission {
         font-size: 0.7rem;
     }
-    
+
     .ticker-content span {
         font-size: 6vw;
         margin-right: 5vw;
     }
-    
+
     .contact-card {
         min-height: 140px;
         padding: 12px 8px;
@@ -2681,18 +2967,40 @@ img {
 }
 
 /* Enhanced Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: 1.3;
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 4rem); }
-h2 { font-size: clamp(1.75rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 2rem); }
-h5 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
-h6 { font-size: clamp(1rem, 1.5vw, 1.25rem); }
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+h5 {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+h6 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
 
 p {
     line-height: 1.7;
@@ -2730,10 +3038,7 @@ p {
 }
 
 /* Enhanced Card Shadows */
-.card-shadow {
-
-
-}
+.card-shadow {}
 
 
 
@@ -2771,8 +3076,15 @@ p {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 /* Ticker Section */
@@ -2780,4 +3092,81 @@ p {
     width: 100%;
     background: #FFFFFF;
     margin-top: 0;
+}
+
+/* Footer Divider */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #a09f9f6e;
+    margin: 10px 0 100px;
+    opacity: 0.8;
+}
+
+/* Intersection Observer triggered animations */
+.menu-item,
+.category-item,
+.contact-card,
+.menu-item-detailed,
+.brand-logo {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-item.animate-in,
+.category-item.animate-in,
+.contact-card.animate-in,
+.menu-item-detailed.animate-in,
+.brand-logo.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays for better visual effect */
+.menu-item:nth-child(1) { transition-delay: 0.1s; }
+.menu-item:nth-child(2) { transition-delay: 0.2s; }
+.menu-item:nth-child(3) { transition-delay: 0.3s; }
+.menu-item:nth-child(4) { transition-delay: 0.4s; }
+.menu-item:nth-child(5) { transition-delay: 0.5s; }
+.menu-item:nth-child(6) { transition-delay: 0.6s; }
+
+.category-item:nth-child(1) { transition-delay: 0.1s; }
+.category-item:nth-child(2) { transition-delay: 0.2s; }
+.category-item:nth-child(3) { transition-delay: 0.3s; }
+.category-item:nth-child(4) { transition-delay: 0.4s; }
+
+.contact-card:nth-child(1) { transition-delay: 0.1s; }
+.contact-card:nth-child(2) { transition-delay: 0.2s; }
+.contact-card:nth-child(3) { transition-delay: 0.3s; }
+
+.menu-item-detailed:nth-child(odd) { transition-delay: 0.1s; }
+.menu-item-detailed:nth-child(even) { transition-delay: 0.2s; }
+
+.brand-logo:nth-child(1) { transition-delay: 0.1s; }
+.brand-logo:nth-child(2) { transition-delay: 0.2s; }
+.brand-logo:nth-child(3) { transition-delay: 0.3s; }
+.brand-logo:nth-child(4) { transition-delay: 0.4s; }
+.brand-logo:nth-child(5) { transition-delay: 0.5s; }
+.brand-logo:nth-child(6) { transition-delay: 0.6s; }
+
+/* Performance optimizations */
+* {
+    will-change: auto;
+}
+
+.menu-item,
+.category-item,
+.contact-card,
+.menu-item-detailed,
+.brand-logo {
+    will-change: transform, opacity;
+}
+
+.menu-item.animate-in,
+.category-item.animate-in,
+.contact-card.animate-in,
+.menu-item-detailed.animate-in,
+.brand-logo.animate-in {
+    will-change: auto;
 }

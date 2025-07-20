@@ -38,11 +38,7 @@ web-test/
 ## Kurulum
 
 1. Projeyi klonlayın veya indirin
-2. Bir web sunucusu başlatın:
-   ```bash
-   npx http-server . -p 3000
-   ```
-3. Tarayıcınızda `http://localhost:3000` adresini açın
+2. Tarayıcınızda `http://localhost:3000` adresini açın
 
 ## Geliştirme
 
